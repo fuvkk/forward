@@ -9,10 +9,7 @@ from forwarder import FROM_CHATS, LOGGER, REMOVE_TAG, TO_CHATS, dispatcher
 
 
 def send_message(message: Message, chat_id: int) -> Union[MessageId, Message]:
-    if REMOVE_TAG:
-        return message.copy(chat_id)
-    return message.forward(chat_id)
-
+    return message.copy(chat_id)    
 
 
 def forward(update: Update, context: CallbackContext):
